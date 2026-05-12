@@ -188,27 +188,27 @@ main {
 .hero__visual {
   position: relative;
   min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.speed-ring {
-  position: absolute;
-  inset: 10% 15%;
-  border-radius: 50%;
-  border: 2px dashed color-mix(in srgb, var(--accent) 45%, transparent);
-  animation: spin 22s linear infinite;
+.moto-scene {
+  width: 100%;
+  max-width: 480px;
+  animation: moto-float 4s ease-in-out infinite;
 }
 
-.speed-ring--delay {
-  inset: 22% 28%;
-  animation-duration: 32s;
-  animation-direction: reverse;
-  opacity: 0.5;
+.moto-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 12px 40px rgba(255, 77, 46, 0.15));
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes moto-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .section {
@@ -312,10 +312,12 @@ main {
   justify-content: center;
 }
 
-.social-card__logo svg {
+.social-card__logo svg,
+.social-card__logo img {
   display: block;
   width: 2.5rem;
   height: 2.5rem;
+  object-fit: contain;
 }
 
 .social-card__label {
