@@ -5,37 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Kanał motocyklowy — YouTube, social media i sklep z ubraniami. Dołącz do społeczności."
+      content="Kanał motocyklowy — YouTube, social media i dziennik tras. Dołącz do społeczności."
     />
     <title>OstryMoto — motocykle & lifestyle</title>
+    <!--
+      Frameworki projektu (studia):
+      1. Bootstrap 5 — nawigacja, formularz, okna modalne
+      2. jQuery — linki z konfiguracji i obsługa formularza
+      3. Vue 3 — dziennik tras z filtrem i licznikiem kilometrów
+    -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="vendor/bootstrap.min.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-bs-theme="dark">
     <div class="grain" aria-hidden="true"></div>
-    <header class="site-header">
-      <a class="logo" href="#">Ostry<span></span>Moto</a>
-      <nav class="nav" aria-label="Główna nawigacja">
-        <a href="#galeria">Galeria</a>
-        <a href="#social">Social</a>
-        <a href="#sklep">Sklep</a>
-        <a href="#kontakt">Kontakt</a>
+    <header class="site-header navbar navbar-expand-md">
+      <a class="logo navbar-brand" href="#top">Ostry<span></span>Moto</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Otwórz menu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="nav collapse navbar-collapse" id="mainNav" aria-label="Główna nawigacja">
+        <div class="navbar-nav ms-md-auto">
+          <a class="nav-link" href="#galeria">Galeria</a>
+          <a class="nav-link" href="#wideo">Wideo</a>
+          <a class="nav-link" href="#social">Social</a>
+          <a class="nav-link" href="#trasy">Trasy</a>
+          <a class="nav-link" href="#kontakt">Kontakt</a>
+        </div>
       </nav>
     </header>
 
-    <main>
+    <main id="top">
       <section class="hero">
         <div class="hero__content">
           <p class="eyebrow">Motocykle · trasy · społeczność</p>
-          <h1>Jedziemy razem. Subskrybuj, obserwuj, noś ten vibe.</h1>
+          <h1>Jedziemy razem. Subskrybuj, obserwuj.</h1>
           <p class="lead">
-            OstryMoto filmy, social media, sklep z ubraniami i wszystko,
-            co łączy Cię z pasją do dwóch kółek.
+            OstryMoto to filmy, trasy i społeczność wokół pasji do dwóch kółek.
           </p>
           <div class="hero__actions">
             <a class="btn btn--primary" id="link-youtube-hero" href="#" target="_blank" rel="noopener noreferrer">
@@ -57,24 +77,59 @@
         </div>
         <div class="gallery">
           <figure class="gallery__item">
+            <img src="img/08-cbr-bok.jpg" alt="Honda CBR z boku na torze" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="img/02-sunset-helmet.png" alt="Kask na tle zachodu słońca" />
+          </figure>
+          <figure class="gallery__item">
             <img src="img/01-cbr-port.png" alt="Honda CBR na nabrzeżu" loading="lazy" />
           </figure>
           <figure class="gallery__item">
-            <img src="img/02-sunset-helmet.png" alt="Kask na tle zachodu słońca" loading="lazy" />
-          </figure>
-          <figure class="gallery__item">
-            <img src="img/03-two-riders.png" alt="Dwóch motocyklistów na drodze" loading="lazy" />
-          </figure>
-          <figure class="gallery__item">
-            <img src="img/04-gas-station.png" alt="CBR na stacji benzynowej o zmierzchu" loading="lazy" />
+            <img src="img/07-tor-zakret.jpg" alt="Czerwona CBR w zakręcie na torze" loading="lazy" />
           </figure>
           <figure class="gallery__item">
             <img src="img/05-two-bikes.png" alt="Dwie Hondy na nadmorskiej trasie" loading="lazy" />
           </figure>
           <figure class="gallery__item">
+            <img src="img/13-luk.jpg" alt="CBR w łuku przy trawie" loading="lazy" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="img/09-dwoch-na-torze.jpg" alt="Dwóch zawodników na torze" loading="lazy" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="img/04-gas-station.png" alt="CBR na stacji benzynowej o zmierzchu" loading="lazy" />
+          </figure>
+          <figure class="gallery__item">
             <img src="img/06-mirror-river.png" alt="Lusterko motocykla na tle rzeki" loading="lazy" />
           </figure>
+          <figure class="gallery__item">
+            <img src="img/10-tor-opony.jpg" alt="CBR przy bandzie z opon" loading="lazy" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="img/03-two-riders.png" alt="Dwóch motocyklistów na drodze" loading="lazy" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="img/11-warsztat.jpg" alt="Motocykl rozebrany w warsztacie" loading="lazy" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="img/12-garaz-cbr.jpg" alt="CBR w garażu na stojaku" loading="lazy" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="img/14-garaz-rama.jpg" alt="Rozłożona maszyna w garażu" loading="lazy" />
+          </figure>
         </div>
+      </section>
+
+      <section class="section" id="wideo">
+        <div class="section__head">
+          <h2>Wideo</h2>
+        </div>
+        <figure class="video-card">
+          <video controls playsinline preload="metadata" poster="video/tor-2.jpg">
+            <source src="video/tor-2.mp4" type="video/mp4" />
+          </video>
+        </figure>
       </section>
 
       <section class="section" id="social">
@@ -118,22 +173,63 @@
         </ul>
       </section>
 
-      <section class="section section--accent" id="sklep">
-        <div class="shop">
-          <div class="shop__text">
-            <h2>Sklep z ubraniami</h2>
-            <p>
-              Koszulki, bluzy, czapki — styl inspirowany asfaltem i wiatrem w kasku.
-              Start sklepu: <strong>Coming soon</strong> 
-            </p>
-            <a class="btn btn--primary" id="link-shop" href="#" target="_blank" rel="noopener noreferrer">
-              Przejdź do sklepu
-            </a>
+      <section class="section section--accent" id="trasy">
+        <div class="section__head">
+          <h2>Dziennik tras</h2>
+          <p>Tor, droga i garaż. Filtr zostawia równy zestaw, a licznik sumuje kilometry.</p>
+        </div>
+
+        <div id="trasy-app" class="rides-app">
+          <div class="rides-toolbar">
+            <div class="rides-filters" role="group" aria-label="Rodzaj trasy">
+              <button
+                v-for="cat in categories"
+                :key="cat.id"
+                type="button"
+                class="chip"
+                :class="{ 'is-active': active === cat.id }"
+                @click="active = cat.id"
+              >
+                {{ cat.label }}
+              </button>
+            </div>
+            <p class="rides-stats">{{ filtered.length }} wyjazdów · {{ totalKm }} km</p>
           </div>
-          <div class="shop__badge" aria-hidden="true">
-            <span>MERCH</span>
-            <span>DROP</span>
-          </div>
+
+          <ul class="ride-grid">
+            <li v-for="ride in filtered" :key="ride.id">
+              <article class="ride-card">
+                <button type="button" class="ride-card__hit" @click="open(ride)">
+                  <img :src="ride.image" :alt="ride.tag" />
+                  <span class="ride-card__body">
+                    <span class="ride-card__tag">{{ ride.tag }}</span>
+                    <span class="ride-card__km">{{ ride.km }} km</span>
+                  </span>
+                </button>
+              </article>
+            </li>
+          </ul>
+          <p v-if="filtered.length === 0" class="rides-empty">Brak tras w tej kategorii.</p>
+
+          <Teleport to="body">
+            <div class="modal fade" id="rideModal" tabindex="-1" aria-labelledby="rideModalTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="rideModalTitle">{{ selected ? selected.tag : "Trasa" }}</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+                  </div>
+                  <div class="modal-body" v-if="selected">
+                    <img class="ride-modal__img" :src="selected.image" :alt="selected.tag" />
+                    <p class="ride-modal__km">{{ selected.km }} km · {{ selected.tag }}</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn--ghost" data-bs-dismiss="modal">Zamknij</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Teleport>
         </div>
       </section>
 
@@ -142,17 +238,57 @@
           <h2>Współpraca &amp; kontakt</h2>
           <p>Marki motocyklowe, eventy, media — napisz, ustalimy szczegóły.</p>
         </div>
-        <a class="btn btn--ghost btn--wide" id="link-mail" href="mailto:twoj@email.pl">
-          Napisz wiadomość
-        </a>
+        <form id="contact-form" class="contact-form needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label" for="contact-name">Imię</label>
+              <input class="form-control" id="contact-name" name="name" type="text" required minlength="2" />
+              <div class="invalid-feedback">Podaj imię (min. 2 znaki).</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="contact-email">E-mail</label>
+              <input class="form-control" id="contact-email" name="email" type="email" required />
+              <div class="invalid-feedback">Podaj poprawny adres e-mail.</div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="contact-message">Wiadomość</label>
+              <textarea class="form-control" id="contact-message" name="message" rows="4" required minlength="10"></textarea>
+              <div class="invalid-feedback">Wiadomość musi mieć co najmniej 10 znaków.</div>
+            </div>
+          </div>
+          <button class="btn btn--primary" type="submit">Wyślij wiadomość</button>
+          <p class="contact-mail">Albo napisz bezpośrednio: <a id="link-mail" href="mailto:kontakt@twoj-email.pl">kontakt@twoj-email.pl</a></p>
+        </form>
       </section>
     </main>
 
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="contactModalTitle">Wiadomość przyjęta</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+          </div>
+          <div class="modal-body">
+            <p>Dzięki, <strong id="contactModalName"></strong>. To wersja demonstracyjna — wiadomość nie wychodzi na serwer, ale formularz przeszedł walidację.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn--primary" data-bs-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer class="site-footer">
-      <p>© <span id="year"></span> — strona kanału motocyklowego. Zbudowane statycznie: wrzuć na hosting lub GitHub Pages.</p>
+      <p>© <span id="year"></span> — strona kanału motocyklowego.</p>
+      <p class="stack-note">Projekt studencki: Bootstrap 5, jQuery, Vue 3.</p>
     </footer>
 
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/bootstrap.bundle.min.js"></script>
+    <script src="vendor/vue.global.prod.js"></script>
     <script src="config.js"></script>
     <script src="main.js"></script>
+    <script src="trasy.js"></script>
   </body>
 </html>
